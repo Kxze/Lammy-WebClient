@@ -22,7 +22,7 @@ export const AppMenu = connect(mapStateToProps, mapDispatchToProps)(({ menuItem,
 
   return (
     <Menu vertical={true} style={{ width: "100%" }}>
-      <Menu.Item name="Home" as={Link} to="/" active={menuItem === "home"} onClick={onSelectChange}>
+      <Menu.Item name="home" as={Link} to="/" active={menuItem === "home"} onClick={onSelectChange}>
         <Icon name="home" />Home
       </Menu.Item>
 
