@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Container } from 'semantic-ui-react';
+import { Container, Segment } from 'semantic-ui-react';
 import { AlbumTable } from "../components/AlbumTable";
 import { ArtistTable } from '../components/ArtistTable';
 import { MenuBar } from "../components/MenuBar";
@@ -9,16 +9,17 @@ import { SongTable } from "../components/SongTable";
 
 const mapStateToProps = (state: any) => ({
   menuItem: state.menus.menuBar,
+  isLoading: state.menus.isLoading,
 })
 
-export const Library = connect(mapStateToProps)(({ menuItem }) => (
+export const Library = connect(mapStateToProps)(({ menuItem, isLoading }) => (
   <Container>
     <SearchBar />
     <MenuBar />
-    <Container>
+    <Segment basic={true} loading={isLoading}>
       {menuItem === "songs" && <SongTable />}
       {menuItem === "artists" && <ArtistTable />}
       {menuItem === "albums" && <AlbumTable />}
-    </Container>
+    </Segment>
   </Container>
 ))

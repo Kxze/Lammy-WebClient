@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { Container, Form, Grid, Label } from "semantic-ui-react";
-import { SelectUpload } from "../components/SelectUpload";
+import { Container, Grid, Segment } from "semantic-ui-react";
+import { MetadataField } from "../components/MetadataField";
 
 const mapStateToProps = (state: any) => ({
   uploadType: state.upload.uploadType,
@@ -10,12 +10,11 @@ const mapStateToProps = (state: any) => ({
 export const Upload = connect(mapStateToProps)(({ uploadType }) => (
   <Grid container={true}>
     <Grid.Row>
-      <Form>
-        <Form.Field>
-          <Label pointing="below">Select a source</Label>
-          <SelectUpload />
-        </Form.Field>
-      </Form>
+      <Container>
+        <Segment>
+          <MetadataField />
+        </Segment>
+      </Container>
     </Grid.Row>
     <Grid.Row>
       <Container>
