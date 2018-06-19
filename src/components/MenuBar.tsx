@@ -2,6 +2,7 @@ import * as React from "react";
 import { connect } from 'react-redux';
 import { Dispatch } from "redux";
 import { Menu } from "semantic-ui-react";
+import { getLibraryData } from "../actions/Library";
 import { setLibraryMenu } from "../actions/Menus";
 
 const mapStateToProps = (state: any) => ({
@@ -10,6 +11,7 @@ const mapStateToProps = (state: any) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   changeMenuItem: (menuItem: string) => {
+    dispatch(getLibraryData(menuItem));
     dispatch(setLibraryMenu(menuItem));
   }
 })
