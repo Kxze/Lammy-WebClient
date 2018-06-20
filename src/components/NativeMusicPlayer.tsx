@@ -47,8 +47,10 @@ export const MusicPlayerNative = connect(mapStateToProps, mapDispatchToProps)(({
   }
 
   const playPlayback = () => {
-    player.play();
-    _setIsPaused(false);
+    if (player.src) {
+      player.play();
+      _setIsPaused(false);
+    }
   }
 
   const alternatePlayback = () => {
@@ -65,7 +67,7 @@ export const MusicPlayerNative = connect(mapStateToProps, mapDispatchToProps)(({
         style={{ display: "none" }}
         controls={false}
         src={nowPlaying} />
-      <MusicPlayer alternatePlayback={alternatePlayback}/>
+      <MusicPlayer alternatePlayback={alternatePlayback} />
     </div>
   )
 })
