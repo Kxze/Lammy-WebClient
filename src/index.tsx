@@ -12,6 +12,7 @@ import './index.css';
 import { Library } from './pages/Library';
 import { Upload } from './pages/Upload';
 import { rootReducer } from './reducers';
+import './semantic/dist/semantic.min.css';
 
 declare module 'redux' {
   export type GenericStoreEnhancer = any;

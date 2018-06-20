@@ -3,12 +3,14 @@
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
-      "node_modules/**/*.ts"
+      "node_modules/**/*.ts",
+      "src/semantic/*.js"
     ]
   },
   "rules": {
     "object-literal-sort-keys": false,
     "jsx-no-lambda": false,
-    "no-console": false
+    "no-console": false,
+    "variable-name": false
   }
 }

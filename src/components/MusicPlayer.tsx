@@ -6,7 +6,7 @@ const mapStateToProps = (state: any) => ({
   isPaused: state.player.isPaused,
   songInfo: state.player.songInfo,
   currentTime: state.player.currentTime,
-  duration: state.player.duration,
+  duration: state.player.duration
 })
 
 export const MusicPlayer = connect<any, any, any>(mapStateToProps)(({ alternatePlayback, isPaused, songInfo, currentTime, duration }) => {
